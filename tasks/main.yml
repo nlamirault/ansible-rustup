@@ -9,6 +9,8 @@
   ansible.builtin.package:
     name: "{{ rustup_packages }}"
     state: present
+  become: true
+  become_user: root
 
 - name: Primary block, running tasks as specified rustup user
   become: true
